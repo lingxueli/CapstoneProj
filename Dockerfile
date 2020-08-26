@@ -13,6 +13,6 @@ RUN pip install --upgrade pip &&\
 EXPOSE 8080
 
 # run application on port 8000
-CMD ["python", "manage.py", "runserver", "8000"]
+CMD ["python", "manage.py", "runserver"]
 
 
