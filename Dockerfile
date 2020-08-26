@@ -7,12 +7,12 @@ COPY . /app/
 
 # install dependencies
 RUN pip install --upgrade pip &&\
-    pip install django
+    pip install --trusted-host pypi.python.org -r requirements.txt
 
 # export docker image port 8080
 EXPOSE 8080
 
-# run application on port 7000
-CMD ["python", "manage.py", "runserver", "7000"]
+# run application on port 8000
+CMD ["python", "manage.py", "runserver", "8000"]
 
 
