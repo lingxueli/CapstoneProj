@@ -9,8 +9,9 @@ COPY . /app/
 RUN pip3 install --upgrade pip &&\
     pip3 install --trusted-host pypi.python.org -r requirements.txt
 
-# export docker image port 8080
-EXPOSE 8080
+# app runs on port 8000, docker container listens on port 8000
+
+EXPOSE 8000
 
 # run application on port 8000
 CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
