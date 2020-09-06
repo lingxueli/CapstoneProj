@@ -5,7 +5,6 @@ pipeline {
             steps {
                 sh 'make setup'
                 sh 'make install'
-                sh 'sudo sh .\run_docker.sh'
             }
         }
         stage('Lint Python') {
