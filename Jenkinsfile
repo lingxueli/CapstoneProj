@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'nosetests --verbosity=2 $(PWD)''
+                sh 'nosetests --verbosity=2 $(PWD)'
             }
         }
         stage('Security Scan') {
