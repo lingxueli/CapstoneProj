@@ -1,7 +1,5 @@
 pipeline {
-     agent {
-        docker {image 'wisdompet:latest'}
-     }
+     agent any
      stages {
         stage('Build') {
             steps {
@@ -21,6 +19,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+		python3 manage.py runserver
                 sh 'make test'
             }
         }
