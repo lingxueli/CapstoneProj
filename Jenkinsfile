@@ -3,16 +3,13 @@ pipeline {
      stages {
         stage('Build') {
             steps {
-                sh 'echo "Hello World"'
-                sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lah
-                '''
+                sh 'make setup'
+                sh 'make install'
             }
         }
         stage('Lint Python') {
             steps {
-                pylint --disable=R,C manage.py
+                sh 'make lint'
             }
         }
         stage('Lint HTML') {
@@ -22,7 +19,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                nosetests --verbosity=2 $(PWD)
+                sh 'nosetests --verbosity=2 $(PWD)''
             }
         }
         stage('Security Scan') {
