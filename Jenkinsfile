@@ -1,5 +1,7 @@
 pipeline {
-     agent any
+     agent {
+        docker {image 'wisdompet:latest'}
+     }
      stages {
         stage('Build') {
             steps {
