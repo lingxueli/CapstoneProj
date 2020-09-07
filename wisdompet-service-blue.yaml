@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wisdompet-deployment
+  namespace: wisdompet-namespace
+  labels:
+    app: wisdompet-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: wisdompet-app
+  template:
+    metadata:
+      labels:
+        app: wisdompet-app
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: beta.kubernetes.io/arch
+                operator: In
+                values:
+                - amd64
+                - arm64
+      containers:
+      - name: wisdompet
+        image: lingxueli/wisdompet:latest
+        ports:
+        - containerPort: 8000
