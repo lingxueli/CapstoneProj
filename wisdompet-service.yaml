@@ -43,6 +43,6 @@ spec:
                 - arm64
       containers:
       - name: wisdompet
-        image: lingxueli/wisdompet:latest-green
+        image: lingxueli/wisdompet:green
         ports:
         - containerPort: 8000
