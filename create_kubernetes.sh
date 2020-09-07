@@ -4,9 +4,9 @@ eksctl create cluster \
 --region us-west-2 \
 --nodegroup-name linux-nodes \
 --node-type t2.micro \
---nodes 3 \
+--nodes 6 \
 --nodes-min 1 \
---nodes-max 6 \
+--nodes-max 9 \
 --ssh-access \
 --ssh-public-key /home/ubuntu/store/capstone-kubernetes.pub \
 --managed
