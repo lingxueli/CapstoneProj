@@ -33,8 +33,8 @@ pipeline {
         stage('upload to Kubernetes'){
             steps{
                 withKubeConfig([credentialsId: 'capstone-EKS', serverUrl: 'http://a5e8e02d00d8c49468740a47094e899e-1342252552.us-west-2.elb.amazonaws.com:8000/']) {
-                    sh 'kubectl apply -f kubernetes-deployment-latest.yaml'
-                    sh 'kubectl apply -f kubernetes-service.yaml'
+                    sh 'kubectl apply -f kubernetes-deployment-latest.yaml -v=8'
+                    sh 'kubectl apply -f kubernetes-service.yaml -v=8'
                 }
 
             }
