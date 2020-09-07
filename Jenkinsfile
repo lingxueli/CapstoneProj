@@ -17,5 +17,11 @@ pipeline {
                 sh 'tidy -q -e *.html'
             }
         }
+        stage('Update docker') {
+            steps {
+                sh 'sudo sh .\run_docker.sh'
+                sh 'sudo sh .\upload_docker.sh'
+            }
+        }
      }
 }
