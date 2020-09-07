@@ -9,7 +9,7 @@ spec:
   type: LoadBalancer
   selector:
     app: wisdompet-app
-    version:
+    version: "1.10"
   ports:
     - protocol: TCP
       port: 8000
