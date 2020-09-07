@@ -14,13 +14,13 @@ spec:
       port: 8000
       targetPort: 8000
 ---
-apiVersion: apps/v1.3
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wisdompet-deployment-v1.3
+  name: wisdompet-deployment
   namespace: wisdompet-namespace
   labels:
-    app: my-app
+    app: wisdompet-app
 spec:
   replicas: 3
   selector:
@@ -43,6 +43,6 @@ spec:
                 - arm64
       containers:
       - name: wisdompet
-        image: lingxueli/wisdompet:latest-v3
+        image: lingxueli/wisdompet:latest
         ports:
         - containerPort: 8000
