@@ -17,19 +17,19 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wisdompet-deployment
+  name: wisdompet-deployment-v2
   namespace: wisdompet-namespace
   labels:
-    app: wisdompet-app
+    app: wisdompet-app-v2
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: wisdompet-app
+      app: wisdompet-app-v2
   template:
     metadata:
       labels:
-        app: wisdompet-app
+        app: wisdompet-app-v2
     spec:
       affinity:
         nodeAffinity:
@@ -43,6 +43,6 @@ spec:
                 - arm64
       containers:
       - name: wisdompet
-        image: lingxueli/wisdompet:latest
+        image: lingxueli/wisdompet:latest-green
         ports:
         - containerPort: 8000
