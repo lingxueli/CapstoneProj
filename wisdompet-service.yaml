@@ -41,7 +41,7 @@ spec:
                 - amd64
                 - arm64
       containers:
-      - name: nginx
-        image: nginx:1.19.2
+      - name: wisdompet
+        image: wisdompet:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 8000
