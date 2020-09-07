@@ -21,6 +21,12 @@ pipeline {
             steps{
                 sh 'sudo docker build --tag=wisdompet:latest .'
                 sh 'sudo docker tag wisdompet:latest  lingxueli/wisdompet:latest'
+                
+            }
+        }
+        stage('upload docker image'){
+            steps{
+                sh 'sudo docker login --username lingxueli'
                 sh 'sudo docker push lingxueli/wisdompet'
             }
         }
