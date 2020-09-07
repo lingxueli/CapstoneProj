@@ -26,7 +26,7 @@ pipeline {
         }
         stage('upload docker image'){
             steps{
-                sh 'sudo docker login --username lingxueli'
+                sh 'cat ~/my_password.txt | sudo docker login --username lingxueli --password-stdin'
                 sh 'sudo docker push lingxueli/wisdompet'
             }
         }
