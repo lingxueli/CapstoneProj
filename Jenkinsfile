@@ -1,6 +1,6 @@
 pipeline {
-     agent any
-     stages {
+    agent any
+    stages {
         stage('Build') {
             steps {
                 sh 'make setup'
@@ -19,9 +19,9 @@ pipeline {
         }
         stage('Update docker') {
             steps {
-                sh 'sudo sh .\run_docker.sh'
-                sh 'sudo sh .\upload_docker.sh'
+                sh 'sudo sh ./run_docker.sh'
+                sh 'sudo sh ./upload_docker.sh'
             }
         }
-     }
+    }
 }
