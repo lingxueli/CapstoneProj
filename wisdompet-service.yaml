@@ -6,12 +6,13 @@ metadata:
   labels:
     app: wisdompet-app
 spec:
+  type: LoadBalancer
   selector:
     app: wisdompet-app
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: 8000
+      targetPort: 8000
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -42,6 +43,6 @@ spec:
                 - arm64
       containers:
       - name: wisdompet
-        image: wisdompet:latest
+        image: lingxueli/wisdompet
         ports:
         - containerPort: 8000
