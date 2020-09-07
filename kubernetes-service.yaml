@@ -8,7 +8,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: wisdompet-app-v2
+    app: wisdompet-app-latest
   ports:
     - protocol: TCP
       port: 8000
